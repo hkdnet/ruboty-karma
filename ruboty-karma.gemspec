@@ -1,0 +1,22 @@
+# coding: utf-8
+lib = File.expand_path('../lib', __FILE__)
+$LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
+require 'ruboty/karma/version'
+
+Gem::Specification.new do |spec|
+  spec.name          = 'ruboty-karma'
+  spec.version       = Ruboty::Karma::VERSION
+  spec.authors       = ['hkdnet']
+  spec.email         = ['hkdnet@users.noreply.github.com']
+
+  spec.files         = `git ls-files -z`.split("\x0")
+  spec.summary       = "manage members' karma"
+  spec.homepage      = 'https://github.com/hkdnet/ruboty-karma'
+  spec.license       = 'MIT'
+
+  spec.require_paths = ['lib']
+
+  spec.add_dependency 'ruboty'
+  spec.add_development_dependency 'bundler', '~> 1.10'
+  spec.add_development_dependency 'rake', '~> 10.0'
+end
