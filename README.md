@@ -1,6 +1,6 @@
 # Ruboty::Karma
 
-A plugin for Ruboty + Slack which allows your bot to echo to another channel.
+A plugin for Ruboty which manage members' karma.
 
 ## Installation
 
@@ -20,11 +20,21 @@ Or install it yourself as:
 
 ## Usage
 
+### increase
+
 ```
 @ruboty @username ++
 ```
 
 @ruboty will increase @username's karma.
+
+### list
+
+```
+@ruboty list karma
+```
+
+@ruboty will show you list of members' karma.
 
 ## Contributing
 
