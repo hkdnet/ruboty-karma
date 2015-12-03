@@ -23,10 +23,10 @@ Or install it yourself as:
 ### increase
 
 ```
-@ruboty @username ++
+@ruboty @name ++
 ```
 
-@ruboty will increase @username's karma.
+@ruboty will increase @name's karma.
 
 ### list
 

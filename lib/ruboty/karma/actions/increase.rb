@@ -3,7 +3,7 @@ module Ruboty
     module Actions
       class Increase < Ruboty::Actions::Base
         def call
-          name = message[:username]
+          name = message[:name]
           add_user(name)
           updated_karma = increment(name)
           replay(name, updated_karma)
