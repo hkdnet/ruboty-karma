@@ -12,7 +12,7 @@ module Ruboty
         description: "increment a user's karma"
       )
       on(
-        /list karma/m,
+        /list karma/,
         name: 'list',
         description: "list all menber's karma"
       )
