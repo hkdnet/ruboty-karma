@@ -6,7 +6,7 @@ module Ruboty
           name = message[:name]
           add_user(name)
           updated_karma = increment(name)
-          replay(name, updated_karma)
+          reply(name, updated_karma)
         end
 
         private
