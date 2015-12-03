@@ -3,10 +3,17 @@ module Ruboty
     module Actions
       class Increase < Ruboty::Actions::Base
         def call
-          name = message[:username]
+          name = message[:name]
           add_user(name)
           updated_karma = increment(name)
-          message.reply("#{name}: #{updated_karma}")
+          replay(name, updated_karma)
+        end
+
+        private
+
+        def reply(name, updated_karma)
+          template = ENV['RUBOTY_KARMA_ADD'] || '%s: %d'
+          message.reply(format(template, name, updated_karma))
         end
 
         def add_user(name)
