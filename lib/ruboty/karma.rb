@@ -7,7 +7,7 @@ module Ruboty
   module Handlers
     class Karma < Base
       on(
-        /@?(?<name>\S+)\s*\+\+/m,
+        /@?(?<name>\S+):?\s*\+\+/m,
         name: 'increment',
         description: "increment a user's karma"
       )
