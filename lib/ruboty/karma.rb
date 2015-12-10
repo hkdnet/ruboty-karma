@@ -2,19 +2,28 @@ require 'ruboty'
 require 'ruboty/karma/version'
 require 'ruboty/karma/actions/increase'
 require 'ruboty/karma/actions/list'
+require 'ruboty/karma/actions/delete'
 
 module Ruboty
   module Handlers
     class Karma < Base
+      INCREMENT_PATTERN = /@?(?<name>[^@:\s]+):?\s+\+\+/m
+      DELETE_PATTERN = /delete karma @?(?<name>[^@:\s]+):?/m
+
       on(
-        /@?(?<name>\S+?):?\s*\+\+/m,
+        INCREMENT_PATTERN,
         name: 'increment',
         description: "increment a user's karma"
       )
       on(
         /list karma/,
         name: 'list',
-        description: "list all menber's karma"
+        description: "list all users' karma"
+      )
+      on(
+        DELETE_PATTERN,
+        name: 'delete',
+        description: "delete a user's karma"
       )
 
       def increment(message)
@@ -23,6 +32,10 @@ module Ruboty
 
       def list(message)
         Ruboty::Karma::Actions::List.new(message).call
+      end
+
+      def delete(message)
+        Ruboty::Karma::Actions::Delete.new(message).call
       end
     end
   end
