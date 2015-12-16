@@ -29,6 +29,7 @@ Or install it yourself as:
 @ruboty will increase @name's karma.
 
 If you want to make @ruboty to say other response, you can use RUBOTY_KARMA_ADD.
+
 ex
 
 ```
