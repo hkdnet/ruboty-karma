@@ -36,6 +36,22 @@ ex
 export RUBOTY_KARMA_ADD=%s got %d karma total! Awesome!
 ```
 
+#### replace
+
+You can use [`ruboty-replace`](https://github.com/r7kamura/ruboty-replace) to use shortcut commands.
+
+Register
+
+```
+@ruboty: replace thx @?(\S+) with @ruboty  @\1 ++
+```
+
+Use
+
+```
+thx @name (you can write message here)
+```
+
 ### list
 
 ```
