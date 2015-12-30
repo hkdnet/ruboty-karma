@@ -43,7 +43,7 @@ You can use [`ruboty-replace`](https://github.com/r7kamura/ruboty-replace) to us
 Register
 
 ```
-@ruboty: replace thx @?(\S+) with @ruboty  @\1 ++
+@ruboty: replace thx @?([^ 　:]+) with @ruboty  @\1 ++
 ```
 
 Use
