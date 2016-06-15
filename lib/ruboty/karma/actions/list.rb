@@ -11,7 +11,7 @@ module Ruboty
           end
           sorted = lists.sort_by { |e| -e[1] }
           text = sorted.map { |e|
-            e.last = quiet_name(e.last) if quiet?
+            e[0] = quiet_name(e[0]) if quiet?
             e.join(': ')
           }.join("\n")
           message.reply(text)
