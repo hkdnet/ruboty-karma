@@ -18,7 +18,7 @@ module Ruboty
         end
 
         def args
-          message['args'].split(/\s+/)
+          message['args'] ? message['args'].split(/\s+/) : []
         end
 
         def quiet?
