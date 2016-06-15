@@ -60,6 +60,31 @@ thx @name (you can write message here)
 
 @ruboty will show you list of members' karma.
 
+If you don't intend to mention others, you can list with `-q` or `--quiet`.
+
+```
+@ruboty list karma -q (or @ruboty list karma --quiet)
+```
+
+Names on the list will be separated with space and it won't disturb anyone.  
+
+```
+# not-quiet
+hkdnet : 1
+# quiet
+h k d n e t : 1
+```
+
+It doesn't look smart, but you may need this.
+
+If you want list to be always quiet, you can use [`ruboty-replace`](https://github.com/r7kamura/ruboty-replace).
+
+Register
+
+```
+@ruboty: replace list karma with list karma -q
+```
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/hkdnet/ruboty-karma. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
