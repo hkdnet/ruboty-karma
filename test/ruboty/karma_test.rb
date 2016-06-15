@@ -3,18 +3,8 @@ require 'minitest-power_assert'
 require 'ruboty/karma'
 
 describe Ruboty::Handlers::Karma do
-  class Ruboty::Handlers::Karma
-    def self.increment_pattern
-      INCREMENT_PATTERN
-    end
-
-    def self.delete_pattern
-      DELETE_PATTERN
-    end
-  end
-
   describe 'INCREMENT_PATTERN' do
-    pattern = Ruboty::Handlers::Karma.increment_pattern
+    pattern = Ruboty::Handlers::Karma::INCREMENT_PATTERN
     it "should match '@hoge ++' -> hoge" do
       match = pattern.match('@hoge ++')
       assert { !match.nil? }
@@ -38,7 +28,7 @@ describe Ruboty::Handlers::Karma do
   end
 
   describe 'DELETE_PATTERN' do
-    pattern = Ruboty::Handlers::Karma.delete_pattern
+    pattern = Ruboty::Handlers::Karma::DELETE_PATTERN
     it "should match 'delete karma @hoge' -> hoge" do
       match = pattern.match('delete karma @hoge')
       assert { !match.nil? }
