@@ -9,6 +9,7 @@ module Ruboty
     class Karma < Base
       INCREMENT_PATTERN = /@?(?<name>[^@:\s]+):?\s+\+\+/m
       DELETE_PATTERN = /delete karma @?(?<name>[^@:\s]+):?/m
+      LIST_PATTERN = /list karma(\s+(?<args>.+))?/
 
       on(
         INCREMENT_PATTERN,
@@ -16,7 +17,7 @@ module Ruboty
         description: "increment a user's karma"
       )
       on(
-        /list karma/,
+        LIST_PATTERN,
         name: 'list',
         description: "list all users' karma"
       )
